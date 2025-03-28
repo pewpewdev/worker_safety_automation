@@ -1,0 +1,58 @@
+{
+    "camId": "Red_zone_creation.mp4",
+    "description": "give desciption about camera",
+    "frameID": 439,
+    "personCount": 2,
+    "personResults": [
+        {
+            "personId": 2,
+            "boundingBox": {
+                "xMin": 2241,
+                "yMin": 1639,
+                "xMax": 2663,
+                "yMax": 2070
+            },
+            "centroid": {
+                "x": 2452,
+                "y": 1854
+            },
+            "zoneInformation": {
+                "withinZone": true,
+                "zoneName": "zone1",
+                "zoneID": 0
+            },
+            "ppeResults": {
+                "hard-hat": true,
+                "gloves": false,
+                "ppe-suit": true
+            }
+        },
+        {
+            "personId": 1,
+            "boundingBox": {
+                "xMin": 1952,
+                "yMin": 267,
+                "xMax": 2304,
+                "yMax": 688
+            },
+            "centroid": {
+                "x": 2128,
+                "y": 477
+            },
+            "zoneInformation": {
+                "withinZone": false,
+                "zoneName": null,
+                "zoneID": null
+            },
+            "ppeResults": {
+                "hard-hat": false,
+                "gloves": false,
+                "ppe-suit": false
+            }
+        }
+    ],
+    "personCountInZone": {
+        "zone1": 1,
+        "zone2": 0
+    }
+}

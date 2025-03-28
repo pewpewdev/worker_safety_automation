@@ -1,0 +1,32 @@
+{
+    "camId": "garbage_detection2.mp4",
+    "description": "garbage detection 2",
+    "frameID": 519,
+    "personCount": 1,
+    "personResults": [
+        {
+            "personId": 13,
+            "boundingBox": {
+                "xMin": 3158,
+                "yMin": 430,
+                "xMax": 3773,
+                "yMax": 1997
+            },
+            "centroid": {
+                "x": 3465,
+                "y": 1213
+            }
+        }
+    ],
+    "garbageDetection": {
+        "garbage": [
+            {
+                "xmin": 2511,
+                "ymin": 1170,
+                "xmax": 2948,
+                "ymax": 1657
+            }
+        ],
+        "garbage_detected": true
+    }
+}

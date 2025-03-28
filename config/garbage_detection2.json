@@ -1,0 +1,45 @@
+{
+    "camID":"garbage_detection2.mp4",
+    "description":"garbage detection 2",
+    "analytics": {
+        "personDetectionCounting":false,
+        "ppeDetection":false,
+        "personInZoneCounting":false,
+        "fallDetection":false,
+        "fire_smoke_detection":false,
+        "garbageDetection":true,
+        "tripHazardDetection": false
+    },
+    
+    
+    "visualizeAnalytics":true,
+
+    "ppeDetection":{
+        "hard-hat":true,
+        "gloves":true,
+        "mask":true,
+        "glasses": true,
+        "boots": true,
+        "vest":true,
+        "ppe-suit":true,
+        "ear-protector":true,
+        "safety-harness":true
+
+    },
+
+    "zones":{
+        "zone1":{
+            "id":0,
+            "name":"zone1",
+            "zonePoints":[]
+                },
+
+        "zone2":{
+            "id":1,
+            "name":"zone2",
+            "zonePoints":[]
+                }
+
+}
+}
+

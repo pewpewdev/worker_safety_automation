@@ -1,0 +1,45 @@
+{
+    "camID": "trip_hazard_detection3",
+    "description": "Trip Hazard Detection Camera 03",
+    "analytics": {
+        "personDetectionCounting": true,
+        "ppeDetection": false,
+        "personInZoneCounting": false,
+        "fallDetection": false,
+        "fire_smoke_detection": false,
+        "garbageDetection": false,
+        "tripHazardDetection": true
+    },
+    "visualizeAnalytics": true,
+
+    "ppeDetection":{
+        "hard-hat":true,
+        "gloves":true,
+        "mask":true,
+        "glasses": true,
+        "boots": true,
+        "vest":true,
+        "ppe-suit":true,
+        "ear-protector":true,
+        "safety-harness":true
+
+    },
+
+    "tripzones": {
+        "zone1": {
+            "id": 0,
+            "name": "Work Area",
+            "zonePoints": [
+                [100, 100], [400, 100], [400, 300], [100, 300]
+            ]
+        },
+        "zone2": {
+            "id": 1,
+            "name": "Storage Area",
+            "zonePoints": [[410, 200], [710, 200], [710, 400], [410, 507]
+
+
+        ]
+        }
+    }
+}

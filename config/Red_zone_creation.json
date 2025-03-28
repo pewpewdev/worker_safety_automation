@@ -1,0 +1,43 @@
+{
+    "camID":"Red_zone_creation.mp4",
+    "description":"give desciption about camera",
+    "analytics": {
+        "personDetectionCounting":true,
+        "ppeDetection":false,
+        "personInZoneCounting":true,
+        "fallDetection":false,
+        "fire_smoke_detection":false,
+        "garbageDetection":false,
+        "tripHazardDetection": false
+    },
+    
+
+    "ppeDetection":{
+        "hard-hat":true,
+        "gloves":true,
+        "mask":false,
+        "glasses": false,
+        "boots": false,
+        "vest":false,
+        "ppe-suit":true,
+        "ear-protector":false,
+        "safety-harness":false
+
+    },
+
+    "zones":{
+        "zone1":{
+            "id":0,
+            "name":"zone1",
+            "zonePoints":[[1140, 986], [1523, 933], [2010, 930], [2263, 946], [2536, 976], [2583, 1313], [2583, 1523], [2573, 1903], [2590, 2110], [1963, 2106], [1363, 2073], [980, 2020], [1013, 1520], [1103, 1100]]
+
+                },
+
+        "zone2":{
+            "id":1,
+            "name":"zone2",
+            "zonePoints":[]
+                }
+
+}
+}

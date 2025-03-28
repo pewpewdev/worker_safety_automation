@@ -1,0 +1,41 @@
+{
+    "camID":"firesmoke2.mp4",
+    "description":"firesmoke2",
+    "analytics": {
+        "personDetectionCounting":false,
+        "ppeDetection":false,
+        "personInZoneCounting":false,
+        "fallDetection":false,
+        "fire_smoke_detection":true,
+        "tripHazardDetection": false
+
+    },
+   
+    "ppeDetection":{
+        "hard-hat":false,
+        "gloves":false,
+        "mask":false,
+        "glasses": false,
+        "boots": false,
+        "vest":false,
+        "ppe-suit":false,
+        "ear-protector":false,
+        "safety-harness":false
+
+    },
+
+    "zones":{
+        "zone1":{
+            "id":0,
+            "name":"zone1",
+            "zonePoints":[]
+                },
+
+        "zone2":{
+            "id":1,
+            "name":"zone2",
+            "zonePoints":[]
+                }
+
+}
+}

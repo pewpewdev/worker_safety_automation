@@ -1,0 +1,41 @@
+{
+    "camID":"only_hard_hat.mp4",
+    "description":"only_hard_hat",
+    "analytics": {
+        "personDetectionCounting":true,
+        "ppeDetection":true,
+        "personInZoneCounting":false,
+        "fallDetection":false,
+        "fire_smoke_detection":false,
+        "garbageDetection":false,
+        "tripHazardDetection": false
+    },
+    
+
+    "ppeDetection":{
+        "hard-hat":true,
+        "gloves":false,
+        "mask":false,
+        "glasses": false,
+        "boots": false,
+        "vest":false,
+        "ppe-suit":false,
+        "ear-protector":false,
+        "safety-harness":false
+    },
+
+    "zones":{
+        "zone1":{
+            "id":0,
+            "name":"zone1",
+            "zonePoints":[]
+                },
+
+        "zone2":{
+            "id":1,
+            "name":"zone2",
+            "zonePoints":[]
+                }
+
+}
+}

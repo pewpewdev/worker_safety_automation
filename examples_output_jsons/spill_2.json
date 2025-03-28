@@ -1,0 +1,32 @@
+{
+    "camId": "spill_1.mp4",
+    "description": "give desciption about camera",
+    "frameID": 1147,
+    "personCount": 1,
+    "personResults": [
+        {
+            "personId": 2,
+            "boundingBox": {
+                "xMin": 48,
+                "yMin": 0,
+                "xMax": 1014,
+                "yMax": 830
+            },
+            "centroid": {
+                "x": 531,
+                "y": 415
+            }
+        }
+    ],
+    "spillDetection": {
+        "spill": [
+            {
+                "xmin": 725,
+                "ymin": 402,
+                "xmax": 1321,
+                "ymax": 752
+            }
+        ],
+        "spill_detected": true
+    }
+}

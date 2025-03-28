@@ -1,0 +1,51 @@
+{
+    "camId": "video_20241021_124117.mp4",
+    "description": "Office camera fall detection",
+    "frameID": 66,
+    "personCount": 2,
+    "personResults": [
+        {
+            "personId": 1,
+            "boundingBox": {
+                "xMin": 0,
+                "yMin": 229,
+                "xMax": 159,
+                "yMax": 567
+            },
+            "centroid": {
+                "x": 79,
+                "y": 398
+            },
+            "fallDetected": false,
+            "zoneInformation": {
+                "withinZone": false,
+                "zoneName": null,
+                "zoneID": null
+            }
+        },
+        {
+            "personId": 2,
+            "boundingBox": {
+                "xMin": 443,
+                "yMin": 133,
+                "xMax": 654,
+                "yMax": 707
+            },
+            "centroid": {
+                "x": 548,
+                "y": 420
+            },
+            "fallDetected": false,
+            "zoneInformation": {
+                "withinZone": false,
+                "zoneName": null,
+                "zoneID": null
+            }
+        }
+    ],
+    "fallDetected": false,
+    "personCountInZone": {
+        "zone1": 0,
+        "zone2": 0
+    }
+}

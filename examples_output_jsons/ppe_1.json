@@ -1,0 +1,41 @@
+{
+    "camId": "8293012-hd_1920_1080_30fps.mov",
+    "description": "8293012-hd_1920_1080_30fps",
+    "frameID": 28,
+    "personCount": 1,
+    "personResults": [
+        {
+            "personId": 1,
+            "boundingBox": {
+                "xMin": 791,
+                "yMin": 192,
+                "xMax": 1249,
+                "yMax": 923
+            },
+            "centroid": {
+                "x": 1020,
+                "y": 557
+            },
+            "zoneInformation": {
+                "withinZone": false,
+                "zoneName": null,
+                "zoneID": null
+            },
+            "ppeResults": {
+                "hard-hat": 1,
+                "gloves": 0,
+                "mask": 0,
+                "glasses": 0,
+                "boots": -1,
+                "vest": 1,
+                "ppe-suit": -1,
+                "ear-protector": 0,
+                "safety-harness": 0
+            }
+        }
+    ],
+    "personCountInZone": {
+        "zone1": 0,
+        "zone2": 0
+    }
+}

@@ -1,0 +1,56 @@
+variables:
+  VERSION: 1.0.0
+  GROUP_PATH: mlai
+
+stages:
+  - Build Development
+  - Deploy To Development Servers
+
+.ssh_template: &ssh_definition
+  - which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )
+  - eval $(ssh-agent -s)
+
+.create_ssh_directory: &create_ssh_directory
+  - mkdir -p ~/.ssh
+  - chmod 700 ~/.ssh
+
+build-development:
+  stage: Build Development
+  image:
+    name: gcr.io/kaniko-project/executor:debug-v0.22.0
+    entrypoint: ['']
+  script:
+    - echo "{\"auths\":{\"$CI_REGISTRY_STAGING\":{\"username\":\"$CI_REGISTRY_STAGING_USER\",\"password\":\"$CI_REGISTRY_STAGING_PASSWORD\"}}}" > /kaniko/.docker/config.json
+    - /kaniko/executor --cache=true --context $CI_PROJECT_DIR --dockerfile $CI_PROJECT_DIR/Dockerfile --destination $CI_REGISTRY_STAGING/$GROUP_PATH/$CI_PROJECT_NAME:$CI_COMMIT_REF_SLUG-$VERSION
+  when: manual
+  only:
+    variables:
+      # add this "[runPipeline]" explicitly to the commit message while commit to trigger the pipelines manually
+      - $CI_COMMIT_REF_NAME == "master"
+      - $CI_COMMIT_MESSAGE =~ /\[runPipeline\]/
+  tags:
+    - docker
+deploy-development:
+  stage: Deploy To Development Servers
+  # the file type variable given will contain the path to the tmp file created by gitlab, give the same as a parameter
+  before_script:
+    - *ssh_definition
+    - echo "$CI_DOCKER_RUNNER_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - *create_ssh_directory
+    - ssh-keyscan -f $DEVELOPMENT_SERVER_IPS >> ~/.ssh/known_hosts
+  script:
+    - |
+      for line in $(cat $DEVELOPMENT_SERVER_IPS); do
+        if [ ! -z "$line" ]
+        then
+          ssh deploy@$line "~/devops-scripts/scripts/updateDeployYamlRemotely.sh services.demo-ai-server.image $CI_REGISTRY_STAGING/$GROUP_PATH/$CI_PROJECT_NAME:$CI_COMMIT_REF_SLUG-$VERSION && docker service update --with-registry-auth insite_demo-ai-server --image $CI_REGISTRY_STAGING/$GROUP_PATH/$CI_PROJECT_NAME:$CI_COMMIT_REF_SLUG-$VERSION"
+        fi
+      done
+  when: manual
+  only:
+    variables:
+      # add this "[runPipeline]" explicitly to the commit message while commit to trigger the pipelines
+      - $CI_COMMIT_REF_NAME == "master"
+      - $CI_COMMIT_MESSAGE =~ /\[runPipeline\]/
+  tags:
+    - docker

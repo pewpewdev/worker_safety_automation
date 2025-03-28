@@ -1,0 +1,43 @@
+{
+    "camID":"8293012-hd_1920_1080_30fps.mov",
+    "description":"8293012-hd_1920_1080_30fps",
+    "analytics": {
+        "personDetectionCounting":true,
+        "ppeDetection":true,
+        "personInZoneCounting":true,
+        "fallDetection":false,
+        "fire_smoke_detection":false,
+        "garbageDetection":false,
+        "tripHazardDetection": false
+    },
+    
+    
+    "visualizeAnalytics":true,
+
+    "ppeDetection":{
+        "hard-hat":true,
+        "gloves":true,
+        "mask":true,
+        "glasses": true,
+        "boots": true,
+        "vest":true,
+        "ppe-suit":true,
+        "ear-protector":true,
+        "safety-harness":true
+    },
+
+    "zones":{
+        "zone1":{
+            "id":0,
+            "name":"zone1",
+            "zonePoints":[]
+                },
+
+        "zone2":{
+            "id":1,
+            "name":"zone2",
+            "zonePoints":[]
+                }
+
+    }
+}

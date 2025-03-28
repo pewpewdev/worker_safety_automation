@@ -1,0 +1,109 @@
+{
+    "modelsDir": "weights",
+    "trackerName": "botsort",
+    "videoSaveDir": "saved_videos",
+
+    "videoDownloader": {
+        "s3BucketName": "syookvisionai",
+        "s3VideoPath": "Ai_demo_server/input_videos/",
+        "localVideoPath": "videos"
+    },
+
+    "reIdModel": {
+        "noOfFrameFeatures": 10,
+        "confidence": 0.8,
+        "modelName": "reId.pth",
+        "modelType": "osnet_x1_0",
+        "device": "cuda"
+    },
+
+    "PersonDetectionModel": {
+        "modelName": "PersonDetectionModel.pt",
+        "confidence": 0.5,
+        "imageSize": 480,
+        "device": "cuda",
+        "iou": 0.7,
+        "batchSize": 1,
+        "orignalClassList": ["person"],
+        "predictionClasses": [0],
+        "showBoxes": true
+    },
+
+    "ppeDetectionModel": {
+        "modelName": "ppeDetectionModel.pt",
+        "confidence": 0.5,
+        "imageSize": 256,
+        "device":"cuda",
+        "iou":0.7,
+        "batchSize":6,
+        "orignalClassList": ["person","hard-hat","gloves","mask","glasses","boots","vest","ppe-suit","ear-protector","safety-harness"],
+        "predictionClasses":[0,1,2,3,4,5,6,7,8,9],
+        "validationMapping": {
+            "hard-hat": "head",
+            "gloves": "hand",
+            "mask": "head",
+            "glasses": "head",
+            "boots": "leg",
+            "vest": "upper-body",
+            "ppe-suit": ["upper-body", "lower-body"],
+            "ear-protector": "head",
+            "safety-harness": "upper-body"
+        }
+    },
+
+    "FireSmokeDetectionModel": {
+        "modelName": "firesmokedetectionmodel.pt",
+        "confidence": 0.5,
+        "imageSize": 640,
+        "device": "cuda",
+        "iou": 0.4,
+        "batchSize": 6,
+        "orignalClassList": ["fire","smoke"],
+        "predictionClasses": [0, 1],
+        "showBoxes": true
+    },
+
+    "fallDetectionModel":{
+        "modelName":"fallClassifier_23oct.pt",
+        "fall_confidence":0.65,
+        "imageSize": 320,
+        "batchSize":6,
+        "device": "cuda",
+        "originalClassList":["fall","notfall"]
+    },
+
+    "bodyPartDetectionModel":{
+        "modelName": "bodyPartDetectionModel.pt",
+        "confidence": 0.5,
+        "iou":0.7,
+        "imageSize": 320,
+        "device":"cuda",
+        "orignalClassList": ["person","head","hand","upper-body","lower-body","leg"] 
+    },
+    
+    "garbageDetectionModel":{
+        "modelName": "garbageDetectionModel.pt",
+        "confidence": 0.5,
+        "imageSize": 480,
+        "device" : "cuda",
+        "originalClassList":["garbage"],
+        "iou": 0.7
+    },
+
+    "triphazardDetectionModel": {
+        "modelName":"tripHazardDetection.pt",
+        "confidence":0.5,
+        "imageSize": 480,
+        "device": "cuda",
+        "originalClassList": ["object"],
+        "iou": 0.7
+    },
+
+    "spillDetectionModel":{
+        "modelName": "spillDetectionModel.pt",
+        "confidence": 0.6,
+        "imageSize": 320,
+        "device" : "cuda",
+        "originalClassList":["spill"]
+    }
+}
