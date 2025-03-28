@@ -23,32 +23,18 @@ This application takes videos and keeps them running infinitely on videos from S
 
 ### Using Repo
 1. Clone the repo:
-    ```sh
-    git clone git@source.syook.com:mlai/ai_for_safety.git
-    # or 
-    https://source.syook.com/mlai/ai_for_safety.git
-    ```
+    
 2. Change to the directory:
-    ```sh   
-    cd ai_for_safety
-    ```
+
 3. Add your `.env` file inside `ai_for_safety`.
 4. Create a new conda environment:
-    ```sh
-    conda create -n ai_demo_server python=3.10 -y
-    ```
+
 5. Activate the conda environment:
-    ```sh
-    conda activate ai_demo_server
-    ```
+
 6. Install CUDA and cuDNN as per official PyTorch instructions (https://pytorch.org/):
-    ```sh
-    conda install -c conda-forge cudatoolkit=11.8 cudnn=8.9
-    ```
+
 7. Install PyTorch as per instructions from (https://pytorch.org/):
-    ```sh
-    conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
-    ```
+    
 8. Check if PyTorch is using CUDA:
     ```python
     >>> import torch
